@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Campus Eats</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/recipes.css">
+    <link rel="stylesheet" href="./css/background.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><img src="./images/logo.jpg" alt="Campus Eats Logo"></div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="recipes.html" class="active">Recipes</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><button class="logout-btn" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="ai-section">
+            <h2>AI Recipe Generator</h2>
+            <p>Enter ingredients you have, and get recipe suggestions!</p>
+            <input type="text" id="ingredientsInput" placeholder="e.g., chicken, rice, tomatoes">
+            <button onclick="window.generateRecipe()">Generate Recipe</button>
+            <div id="aiResult" class="ai-result" style="display:none;"></div>
+            <div id="matchingRecipes" class="matching-recipes-container" style="display:none;"></div>
+        </div>
+
+        <div class="popular-recipes-section">
+            <div class="section-header-recipes">
+                <h2>Popular Recipes</h2>
+                <p>Discover our most loved recipes for healthy campus living</p>
+            </div>
+            <div class="recipe-grid" id="recipeGrid"></div>
+        </div>
+    </div>
+
+    <!-- Recipe Modal -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="window.closeModal()">×</span>
+            <div class="modal-header">
+                <h2 id="modalRecipeName"></h2>
+            </div>
+            <div class="modal-body" id="modalRecipeBody"></div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/common.js"></script>
+    <script type="module" src="./js/recipes.js"></script>
+</body>
+</html>
+

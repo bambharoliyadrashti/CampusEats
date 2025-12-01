@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking - Campus Eats</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/tracking.css">
+    <link rel="stylesheet" href="./css/background.css">
+
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><img src="./images/logo.jpg" alt="Campus Eats Logo"></div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="tracking.html" class="active">Tracking</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><button class="logout-btn" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 style="color: white; margin-bottom: 1rem;">Nutrition Tracking</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>CALORIES</h3>
+                <div class="stat-value" id="totalCalories">0</div>
+                <small>kcal</small>
+            </div>
+            <div class="stat-card">
+                <h3>PROTEIN</h3>
+                <div class="stat-value" id="totalProtein">0</div>
+                <small>grams</small>
+            </div>
+            <div class="stat-card">
+                <h3>CARBS</h3>
+                <div class="stat-value" id="totalCarbs">0</div>
+                <small>grams</small>
+            </div>
+            <div class="stat-card">
+                <h3>FATS</h3>
+                <div class="stat-value" id="totalFats">0</div>
+                <small>grams</small>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Weekly Progress</h3>
+            <canvas id="nutritionChart"></canvas>
+        </div>
+
+        <div class="meal-form">
+            <h3>Add Meal</h3>
+            <div class="form-row">
+                <input type="text" id="mealName" placeholder="Meal Name">
+                <input type="number" id="mealCalories" placeholder="Calories">
+            </div>
+            <div class="form-row">
+                <input type="number" id="mealProtein" placeholder="Protein (g)">
+                <input type="number" id="mealCarbs" placeholder="Carbs (g)">
+                <input type="number" id="mealFats" placeholder="Fats (g)">
+            </div>
+            <button onclick="addMeal()">Add Meal</button>
+        </div>
+    </div>
+
+    <!-- Firebase + Custom Scripts -->
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/common.js"></script>
+    <script type="module" src="./js/tracking.js"></script>
+</body>
+</html>

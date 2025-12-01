@@ -1,0 +1,210 @@
+/* === Background Image === */
+body {
+    background-image: url("../images/bgimg.jpg");  /* Your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Overlay to darken background slightly */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+/* === Login Container === */
+.login-container {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* === Glass Effect Login Box === */
+.login-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    animation: slideUp 0.5s ease-out;
+    color: white;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Logo Section === */
+.logo-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #65cd8d;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+.logo-text img {
+    height: 80px !important;
+    width: auto;
+    max-width: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo-text img:hover {
+    transform: scale(1.05);
+}
+
+.tagline {
+    color: #dcdcdc;
+    font-size: 1rem;
+}
+
+/* === Form === */
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus {
+    border-color: #65cd8d;
+}
+
+/* === Buttons === */
+.btn-primary {
+    width: 100%;
+    padding: 0.9rem;
+    background: #65cd8d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background: #52b77b;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* === Form Links === */
+.switch-form {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #eaeaea;
+}
+
+.switch-form a {
+    color: #65cd8d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 2rem;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+}

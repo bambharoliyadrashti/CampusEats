@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Campus Eats</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/background.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><img src="./images/logo.jpg" alt="Campus Eats Logo"></div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><button class="logout-btn" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="page-header">
+                <h1>Your Profile</h1>
+                <p>Manage your account and health goals</p>
+            </div>
+
+            <!-- Profile Header Card -->
+            <div class="profile-header-card">
+                <div class="profile-avatar" id="profileAvatar"></div>
+                <div class="profile-header-info">
+                    <h2 id="displayName"></h2>
+                    <p id="displayEmail"></p>
+                    <div class="badge-container">
+                        <span class="badge badge-secondary">Active User</span>
+                        <span class="badge badge-outline" id="mealsTrackedBadge">0 Meals Tracked</span>
+                    </div>
+                </div>
+                <button class="outline" onclick="toggleEditMode()">Edit Profile</button>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="section-card">
+                <div class="section-header">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <h3>Personal Information</h3>
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="userName">Full Name</label>
+                        <input type="text" id="userName" placeholder="Enter your name">
+                    </div>
+                    <div class="form-field">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" placeholder="your.email@university.edu">
+                    </div>
+                    <div class="form-field">
+                        <label for="userAge">Age</label>
+                        <input type="number" id="userAge" placeholder="20">
+                    </div>
+                    <div class="form-field">
+                        <label for="userGender">Gender</label>
+                        <select id="userGender">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="userWeight">Weight (lbs)</label>
+                        <input type="number" id="userWeight" placeholder="150">
+                    </div>
+                    <div class="form-field">
+                        <label for="userHeight">Height (cm)</label>
+                        <input type="number" id="userHeight" placeholder="170">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Nutrition Goals -->
+            <div class="section-card">
+                <div class="section-header">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                    <h3>Daily Nutrition Goals</h3>
+                </div>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="goalCalories">Daily Calories</label>
+                        <input type="number" id="goalCalories" placeholder="2000">
+                    </div>
+                    <div class="form-field">
+                        <label for="goalProtein">Protein (g)</label>
+                        <input type="number" id="goalProtein" placeholder="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="goalCarbs">Carbs (g)</label>
+                        <input type="number" id="goalCarbs" placeholder="230">
+                    </div>
+                    <div class="form-field">
+                        <label for="goalFats">Fats (g)</label>
+                        <input type="number" id="goalFats" placeholder="60">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Progress -->
+            <div class="section-card">
+                <div class="section-header">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    <h3>Your Progress</h3>
+                </div>
+                <div class="stats-grid-profile">
+                    <div class="stat-box">
+                        <div class="stat-box-value" id="profileMealsTracked">0</div>
+                        <div class="stat-box-label">Meals Tracked</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-value" id="profileDayStreak">0</div>
+                        <div class="stat-box-label">Day Streak</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-box-value" id="profileGoalAchievement">0%</div>
+                        <div class="stat-box-label">Goal Achievement</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button class="outline" onclick="cancelProfile()">Cancel</button>
+                <button onclick="saveProfile()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/common.js"></script>
+    <script type="module" src="./js/profile.js"></script>
+</body>
+</html>
+

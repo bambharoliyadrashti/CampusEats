@@ -1,0 +1,11 @@
+/* Global background style for all pages */
+body {
+    background-image: url('../images/bgimg1.jpg');  /* Path to your background image */
+    background-size: cover;       /* Make the image cover the whole screen */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-attachment: fixed; /* Keep background fixed during scroll */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Campus Eats</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/background.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo"><img src="./images/logo.jpg" alt="Campus Eats Logo"></div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="tracking.html">Tracking</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><button class="logout-btn" onclick="logout()">Logout</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- Home Screen Slider -->
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=600&fit=crop" alt="Healthy Food">
+                        <div class="slide-content">
+                            <h2>Welcome to Campus Eats</h2>
+                            <p>Your one-stop solution for healthy eating on campus</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&h=600&fit=crop" alt="Fresh Meals">
+                        <div class="slide-content">
+                            <h2>Eat Smart, Stay Healthy</h2>
+                            <p>Quick, nutritious meals designed for busy college students</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&h=600&fit=crop" alt="Delicious Recipes">
+                        <div class="slide-content">
+                            <h2>Discover Amazing Recipes</h2>
+                            <p>Explore a world of delicious and healthy meal options</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&h=600&fit=crop" alt="Nutrition Tracking">
+                        <div class="slide-content">
+                            <h2>Track Your Nutrition</h2>
+                            <p>Monitor your daily intake and achieve your health goals</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=1200&h=600&fit=crop" alt="Healthy Lifestyle">
+                        <div class="slide-content">
+                            <h2>AI-Powered Assistance</h2>
+                            <p>Get personalized recommendations based on your preferences</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&h=600&fit=crop" alt="Community">
+                        <div class="slide-content">
+                            <h2>Join Our Community</h2>
+                            <p>Connect with fellow students on their health journey</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="page active">
+                    <div class="hero">
+                        <h1>Eat Smart, Stay Healthy</h1>
+                        <p>Quick, nutritious meals designed for busy college students. Track your nutrition, discover recipes, and reach your health goals.</p>
+                    </div>
+                    <div class="features-section">
+                        <div class="section-header">
+                            <h2>Our Features</h2>
+                            <p>Everything you need for a healthy campus lifestyle</p>
+                        </div>
+                        <div class="features">
+                            <div class="feature-card">
+                                <!-- <div class="feature-icon">🍳</div> -->
+                                <h3>Smart Recipes</h3>
+                                <p>Discover delicious and nutritious recipes perfect for student life. From quick snacks to full meals that fit your busy schedule.</p>
+                            </div>
+                            <div class="feature-card">
+                                <!-- <div class="feature-icon">📊</div> -->
+                                <h3>Nutrition Tracking</h3>
+                                <p>Monitor your daily intake of calories, protein, carbs, and fats with easy-to-use tools and detailed analytics.</p>
+                            </div>
+                            <div class="feature-card">
+                                <!-- <div class="feature-icon">🤖</div> -->
+                                <h3>AI Recipe Assistant</h3>
+                                <p>Get personalized recipe suggestions based on ingredients you have available and your dietary preferences.</p>
+                            </div>
+                            <div class="feature-card">
+                                <!-- <div class="feature-icon">🎯</div> -->
+                                <h3>Health Goals</h3>
+                                <p>Set and track your nutrition goals to maintain a healthy lifestyle during college with progress monitoring.</p>
+                            </div>
+                            <div class="feature-card">
+                                <!-- <div class="feature-icon">🌐</div> -->
+                                <h3>About Our Platform</h3>
+                                <p>Campus Eats is a comprehensive nutrition platform designed specifically for college students to make healthy eating simple and accessible.</p>
+                            </div>
+                            <div class="feature-card">
+                                <!-- <div class="feature-icon">💡</div> -->
+                                <h3>Why Choose Us</h3>
+                                <p>We combine cutting-edge technology with practical nutrition advice to help you make informed food choices that fit your student budget and lifestyle.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Section -->
+                    <div class="contact-section">
+                        <div class="section-header">
+                            <h2>Get In Touch</h2>
+                            <p>Have questions or feedback? We'd love to hear from you!</p>
+                        </div>
+                        <div class="contact-form-container">
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">
+                                    <span>Send Message</span>
+                                    <span class="btn-icon">→</span>
+                                </button>
+                            </form>
+                            <div class="contact-info">
+                                <div class="info-card">
+                                    <!-- <div class="info-icon">📧</div> -->
+                                    <h4>Email Us</h4>
+                                    <p>bambharoliyadrashti@gmail.com</p>
+                                </div>
+                                <div class="info-card">
+                                    <!-- <div class="info-icon">📞</div> -->
+                                    <h4>Call Us</h4>
+                                    <p>+91 9876543210</p>
+                                </div>
+                                <div class="info-card">
+                                    <!-- <div class="info-icon">📍</div> -->
+                                    <h4>Visit Us</h4>
+                                    <p>JG university<br>Drive in road, Ahmedabad, Gujarat</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Campus Eats</h3>
+                    <p>Your trusted companion for healthy eating on campus</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="tracking.html">Tracking</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: bambharoliyadrashti@gmail.com</p>
+                    <p>Phone: +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Campus Eats. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/common.js"></script>
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>
+
